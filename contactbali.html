@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>D'Holiday Tour</title>
+
+  <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+    /* NAVBAR */
+    .navbar {
+      background-color: #006994;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar img {
+      height: 50px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    .menu a:hover {
+      color: #ffdd00;
+    }
+
+    /* JUDUL */
+    .judul {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    /* FORM */
+    .form-container {
+      background: white;
+      width: 450px;
+      margin: 20px auto 40px;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+    }
+
+    td {
+      padding: 8px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[readonly] {
+      background-color: #eee;
+    }
+
+    .btn {
+      background-color: #006994;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #004e6d;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #006994;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <img src="dholiday.jpeg" alt="D'Holiday Tour">
+  <div class="menu">
+    <a href="index.html">HOME</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="pakettour.html">PAKET TOUR</a>
+    <a href="contactbali.html">CONTACT</a>
+  </div>
+</div>
+
+<!-- JUDUL -->
+<div class="judul">
+  <h2>Form Pemesanan Paket Tour</h2>
+  <p>Silakan tentukan jadwal liburan Anda</p>
+</div>
+
+<!-- FORM -->
+<div class="form-container">
+  <form>
+    <table>
+
+      <tr>
+        <td>Nama</td>
+        <td><input type="text" placeholder="Masukkan nama"></td>
+      </tr>
+
+      <tr>
+        <td>Email</td>
+        <td><input type="email" placeholder="Masukkan email"></td>
+      </tr>
+
+      <tr>
+        <td>No. WhatsApp</td>
+        <td><input type="text" placeholder="08xxxxxxxxxx"></td>
+      </tr>
+
+      <tr>
+        <td>Paket Tour</td>
+        <td>
+          <select>
+            <option>-- Pilih Paket --</option>
+            <option>Paket 4 Hari 3 Malam Harmoni Bali</option>
+            <option>Paket Tour Bali 3 Hari 2 Malam</option>
+            <option>Paket Bali + Nusa Penida</option>
+            <option>Liburan Group Bali + Nusa Penida</option>
+          </select>
+        </td>
+      </tr>
+
+      <!-- PENENTU WAKTU -->
+      <tr>
+        <td>Tanggal Mulai</td>
+        <td><input type="date" id="mulai"></td>
+      </tr>
+
+      <tr>
+        <td>Tanggal Selesai</td>
+        <td><input type="date" id="selesai"></td>
+      </tr>
+
+      <tr>
+        <td>Durasi Liburan</td>
+        <td><input type="text" id="durasi" readonly></td>
+      </tr>
+
+      <tr>
+        <td colspan="2" align="center">
+          <button type="button" class="btn" onclick="hitungDurasi()">Cek Durasi</button>
+        </td>
+      </tr>
+
+    </table>
+  </form>
+</div>
+
+<!-- FOOTER -->
+  <footer>
+    <b>&copy; CopyRight Dira Derana - 251011700969 - 2025</b>
+  </footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function hitungDurasi() {
+  const mulai = document.getElementById("mulai").value;
+  const selesai = document.getElementById("selesai").value;
+
+  if (!mulai || !selesai) {
+    alert("Silakan pilih tanggal mulai dan selesai liburan");
+    return;
+  }
+
+  const tglMulai = new Date(mulai);
+  const tglSelesai = new Date(selesai);
+
+  if (tglSelesai < tglMulai) {
+    alert("Tanggal selesai tidak boleh lebih awal dari tanggal mulai");
+    return;
+  }
+
+  const selisih = tglSelesai - tglMulai;
+  const hari = (selisih / (1000 * 60 * 60 * 24)) + 1;
+
+  document.getElementById("durasi").value = hari + " Hari";
+}
+</script>
+
+</body>
+</html>
