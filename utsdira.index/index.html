@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+  <title>D'Holiday Tour</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #006994;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+    }
+
+    .navbar img {
+      height: 50px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: #ffdd00;
+    }
+
+    
+    .hero {
+      background: url("bg1.jpeg") center/cover no-repeat;
+      padding: 60px 40px;
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.85);
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    .hero-text {
+      width: 50%;
+    }
+
+    .hero-text h1 {
+      font-size: 36px;
+      margin: 10px 0;
+    }
+
+    .hero-text span {
+      color: #0077ff;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    
+    .gallery {
+      width: 45%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    
+    .paket {
+      padding: 40px;
+    }
+
+    .paket h3 {
+      color: #006994;
+    }
+
+    .paket ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .paket li {
+      margin: 10px 0;
+    }
+
+    .paket a {
+      text-decoration: none;
+      color: #0077ff;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .paket a:hover {
+      color: #ff8800;
+      padding-left: 5px;
+    }
+
+    
+    footer {
+      background-color: #006994;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  
+  <div class="navbar">
+    <img src="dholiday.jpeg" alt="D'Holiday Tour">
+    <div class="menu">
+      <a href="index.html">HOME</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="pakettour.html">PAKET TOUR</a>
+      <a href="contactbali.html">CONTACT</a>
+    </div>
+  </div>
+
+  
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <b style="color:#0077ff;">D'Holiday Tour</b>
+        <h1>PAKET WISATA BALI<br>MURAH & <span>TERPERCAYA</span></h1>
+        <p>
+          D'Holiday Tour menyediakan paket wisata Bali murah, tour sehari,
+          honeymoon, dan liburan keluarga. Nikmati pengalaman terbaik dengan layanan profesional!
+        </p>
+      </div>
+
+      <div class="gallery">
+        <img src="gmbr1.jpeg">
+        <img src="gmbr2.jpeg">
+        <img src="gmbr3.jpeg">
+        <img src="gmbr4.jpeg">
+      </div>
+    </div>
+  </section>
+
+  <section class="paket">
+    <h3>PAKET WISATA BALI</h3>
+    <ul>
+      <li><a href="pakettour.html">Paket 4 Hari 3 Malam Harmoni Bali</a></li>
+      <li><a href="pakettour.html">Paket Tour Bali 3 Hari 2 Malam</a></li>
+      <li><a href="pakettour.html">Paket Bali + Nusa Penida</a></li>
+      <li><a href="pakettour.html">Liburan Group Bali + Nusa Penida</a></li>
+      <li><a href="pakettour.html">Paket Liburan Ala Milenial</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <b>&copy; CopyRight Dira Derana - 251011700969 - 2025</b>
+  </footer>
+
+</body>
+</html>
